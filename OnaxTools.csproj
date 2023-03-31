@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>disable</Nullable>
+		<Company>Onasonic Solutions</Company>
+		<PackageTags>OnaxTools,Utilities,Encryption,AES,Decryption,Encipher,Decipher,Logger</PackageTags>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<PackageId>OnaxTools.Utils</PackageId>
+		<Authors>Onadebi</Authors>
+		<Description>A collection of utilities for easy and customizable encryption/decryption, text logging, data type checks etc</Description>
+		<AssemblyVersion>1.0.0.0</AssemblyVersion>
+		<FileVersion>1.0.0.0</FileVersion>
+		<Version>2.0.1</Version>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="7.0.0" />
+		<PackageReference Include="Microsoft.Extensions.Primitives" Version="7.0.0" />
+		<PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.26.0" />
+		<PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
+		<PackageReference Include="RestSharp" Version="109.0.1" />
+		<PackageReference Include="RabbitMQ.Client" Version="6.2.0" />
+	</ItemGroup>
+
+</Project>
