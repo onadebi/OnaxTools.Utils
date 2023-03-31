@@ -13,6 +13,9 @@
 		<AssemblyVersion>1.0.0.0</AssemblyVersion>
 		<FileVersion>1.0.0.0</FileVersion>
 		<Version>2.0.1</Version>
+		<PackageProjectUrl>https://github.com/onadebi/OnaxTools.Utils</PackageProjectUrl>
+		<PackageReadmeFile>ReadMe.Md</PackageReadmeFile>
+		<RepositoryUrl>https://github.com/onadebi/OnaxTools.Utils</RepositoryUrl>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -21,7 +24,14 @@
 		<PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.26.0" />
 		<PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
 		<PackageReference Include="RestSharp" Version="109.0.1" />
-		<PackageReference Include="RabbitMQ.Client" Version="6.2.0" />
+		<!--<PackageReference Include="RabbitMQ.Client" Version="6.2.0" />-->
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Update="ReadMe.Md">
+	    <Pack>True</Pack>
+	    <PackagePath>\</PackagePath>
+	  </None>
 	</ItemGroup>
 
 </Project>
