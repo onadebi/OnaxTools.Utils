@@ -10,9 +10,9 @@
 		<PackageId>OnaxTools.Utils</PackageId>
 		<Authors>Onasonic, Onadebi</Authors>
 		<Description>A collection of utilities for easy and customizable encryption/decryption, text logging, data type checks etc</Description>
-		<AssemblyVersion>1.0.0.0</AssemblyVersion>
-		<FileVersion>1.0.0.0</FileVersion>
-		<Version>2.0.4</Version>
+		<AssemblyVersion>1.0.0.1</AssemblyVersion>
+		<FileVersion>1.0.0.1</FileVersion>
+		<Version>2.0.5</Version>
 		<PackageProjectUrl>https://github.com/onadebi/OnaxTools.Utils</PackageProjectUrl>
 		<PackageReadmeFile>ReadMe.Md</PackageReadmeFile>
 		<RepositoryUrl>https://github.com/onadebi/OnaxTools.Utils</RepositoryUrl>
