@@ -1,5 +1,5 @@
 ﻿using Microsoft.Extensions.Configuration;
-using OnaxTools.Dto;
+using OnaxTools.Dto.MessageQueue;
 
 namespace OnaxTools
 {

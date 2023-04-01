@@ -1,4 +1,4 @@
-﻿namespace OnaxTools.Enums
+﻿namespace OnaxTools.Enums.Http
 {
     public enum StatusCodeEnum
     {

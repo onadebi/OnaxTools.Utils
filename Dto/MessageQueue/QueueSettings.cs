@@ -1,4 +1,4 @@
-﻿namespace OnaxTools.Dto
+﻿namespace OnaxTools.Dto.MessageQueue
 {
     public class QueueSettings
     {

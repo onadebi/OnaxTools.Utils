@@ -1,4 +1,4 @@
-﻿namespace OnaxTools.Dto
+﻿namespace OnaxTools.Dto.Identity
 {
     public class AppUser
     {

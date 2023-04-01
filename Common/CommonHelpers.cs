@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Primitives;
-using OnaxTools.Dto;
+using OnaxTools.Dto.Http;
+using OnaxTools.Dto.Identity;
 using System.IdentityModel.Tokens.Jwt;
 
 namespace OnaxTools.Common

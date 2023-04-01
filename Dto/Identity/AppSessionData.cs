@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace OnaxTools.Dto
+namespace OnaxTools.Dto.Identity
 {
     public class AppSessionData<T> where T : class
     {
