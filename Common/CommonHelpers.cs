@@ -8,15 +8,15 @@ namespace OnaxTools.Common
 {
     public static class CommonHelpers
     {
-        public static GenResponse<AppUser> ReadJwt(HttpContext context)
+        public static GenResponse<AppUserIdentity> ReadJwt(HttpContext context)
         {
-            var objResp = new GenResponse<AppUser>();
+            var objResp = new GenResponse<AppUserIdentity>();
             try
             {
                 var authValues = context.Request.Headers["Authorization"];
                 if (StringValues.IsNullOrEmpty(authValues) || !authValues.Any(m => m.StartsWith("Bearer", StringComparison.OrdinalIgnoreCase)))
                 {
-                    return GenResponse<AppUser>.Failed("Invalid token credentials");
+                    return GenResponse<AppUserIdentity>.Failed("Invalid token credentials");
                 }
                 var authHeader = authValues.FirstOrDefault(m => m != null && m.StartsWith("Bearer"));
                 if (authHeader != null)
@@ -37,7 +37,7 @@ namespace OnaxTools.Common
                     }
                     if (tokenValues.Any())
                     {
-                        var appUser = new AppUser
+                        var appUser = new AppUserIdentity
                         {
                             Email = tokenValues["Email"],
                             DisplayName = tokenValues["unique_name"],
@@ -45,19 +45,19 @@ namespace OnaxTools.Common
                         };
                         string userRoles = tokenValues["Role"];
                         appUser.Roles = !string.IsNullOrWhiteSpace(userRoles) ? userRoles.Split(',').ToList() : new();
-                        objResp = GenResponse<AppUser>.Success(appUser);
+                        objResp = GenResponse<AppUserIdentity>.Success(appUser);
                     }
                     else
                     {
-                        objResp = GenResponse<AppUser>.Failed("Invalid token credentials");
+                        objResp = GenResponse<AppUserIdentity>.Failed("Invalid token credentials");
                     }
                 }
-                else { objResp = GenResponse<AppUser>.Failed("Invalid token credentials"); }
+                else { objResp = GenResponse<AppUserIdentity>.Failed("Invalid token credentials"); }
             }
             catch (Exception ex)
             {
                 OnaxTools.Logger.OutputException(ex);
-                objResp = GenResponse<AppUser>.Failed("Invalid token credentials");
+                objResp = GenResponse<AppUserIdentity>.Failed("Invalid token credentials");
             }
             return objResp;
         }

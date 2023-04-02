@@ -39,10 +39,14 @@
             }
 
         }
-
+        /// <summary>
+        /// Default log directory is **logs** folder. If it does not exist, the logger would create it.
+        /// </summary>
+        /// <param name="ex">Parameter of Type Exception</param>
+        /// <param name="message">Optional information message</param>
         public static void LogException(Exception ex, string message = null)
         {
-            var currentDir = String.Format("{0}Log", AppDomain.CurrentDomain.BaseDirectory);
+            var currentDir = String.Format("{0}logs", AppDomain.CurrentDomain.BaseDirectory);
 
             string lineBreak = "\n======" + DateTime.Now.ToString() + "===========EXCEPTION===========>\n";
             message = !String.IsNullOrWhiteSpace(message) ? $"==={message}===\n" : String.Empty;
@@ -95,11 +99,13 @@
             catch (Exception) { }
             return outputException;
         }
-
-
+        /// <summary>
+        /// Default log directory is **logs** folder. If it does not exist, the logger would create it.
+        /// </summary>
+        /// <param name="message">Information or message to be logged</param>
         public static void LogInfo(string message = null)
         {
-            var currentDir = String.Format("{0}Log\\", AppDomain.CurrentDomain.BaseDirectory);
+            var currentDir = String.Format("{0}logs\\", AppDomain.CurrentDomain.BaseDirectory);
 
             string lineBreak = "\n======" + DateTime.Now.ToString() + "===========INFO===========>\n";
             message = !String.IsNullOrWhiteSpace(message) ? $"{message}\n" : String.Empty;

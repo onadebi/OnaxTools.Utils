@@ -1,6 +1,6 @@
 ﻿namespace OnaxTools.Dto.Identity
 {
-    public class AppUser
+    public class AppUserIdentity
     {
         public virtual string DisplayName { get; set; }
         public virtual string Email { get; set; }
