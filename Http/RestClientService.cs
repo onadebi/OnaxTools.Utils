@@ -1,5 +1,5 @@
-﻿using RestSharp;
-using System.Text.Json;
+﻿using Newtonsoft.Json;
+using RestSharp;
 
 namespace OnaxTools.Http
 {
@@ -24,14 +24,16 @@ namespace OnaxTools.Http
         /// <param name="payload">Paylod body</param>
         /// <param name="headers">Optional - Dictionary of headers</param>
         /// <returns></returns>
-        public async Task<T> PostAsync<T, U>(string url, U payload, IDictionary<string, string> headers)
+        public async virtual Task<T> PostAsync<T, U>(string url, U payload, IDictionary<string, string> headers)
         {
             T objResp = default(T);
+            RestResponse response = new();
             try
             {
                 var options = new RestClientOptions()
                 {
                     MaxTimeout = -1,
+                    RemoteCertificateValidationCallback = (sender, certificate, chain, sslPolicyErrors) => true,
                 };
                 var client = new RestClient(options);
                 var request = new RestRequest(url, Method.Post);
@@ -43,11 +45,11 @@ namespace OnaxTools.Http
                         request.AddHeader(header.Key, value: header.Value);
                     }
                 }
-                var body =JsonSerializer.Serialize(payload);
+                var body = JsonConvert.SerializeObject(payload);
                 request.AddStringBody(body, DataFormat.Json);
-                RestResponse response = await client.ExecuteAsync(request);
+                response = await client.ExecuteAsync(request);
 
-                objResp =JsonSerializer.Deserialize<T>(response.Content);
+                objResp = JsonConvert.DeserializeObject<T>(response.Content);
             }
             catch (Exception ex)
             {
@@ -57,14 +59,15 @@ namespace OnaxTools.Http
         }
 
 
-        public async Task<T> GetAsync<T>(string url, IDictionary<string, string> headers)
+        public async virtual Task<T> GetAsync<T>(string url, IDictionary<string, string> headers)
         {
-            T objResp = default(T);
+            T objResp = default;
             try
             {
                 var options = new RestClientOptions()
                 {
                     MaxTimeout = -1,
+                    RemoteCertificateValidationCallback = (sender, certificate, chain, sslPolicyErrors) => true,
                 };
                 var client = new RestClient(options);
                 var request = new RestRequest(url, Method.Get);
@@ -77,8 +80,7 @@ namespace OnaxTools.Http
                     }
                 }
                 RestResponse response = await client.ExecuteAsync(request);
-
-                objResp = JsonSerializer.Deserialize<T>(response.Content);
+                objResp = JsonConvert.DeserializeObject<T>(response.Content);
             }
             catch (Exception ex)
             {
