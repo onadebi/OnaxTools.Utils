@@ -4,15 +4,15 @@
 		<TargetFramework>net6.0</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>disable</Nullable>
-		<Company>Onasonic Solutions</Company>
+		<Company>Onadebi Solutions</Company>
 		<PackageTags>OnaxTools,Utilities,Encryption,AES,Decryption,Encipher,Decipher,Logger</PackageTags>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 		<PackageId>OnaxTools.Utils</PackageId>
-		<Authors>Onasonic, Onadebi</Authors>
+		<Authors>Onadebi</Authors>
 		<Description>A collection of utilities for easy and customizable encryption/decryption, text logging, data type checks etc</Description>
 		<AssemblyVersion>1.0.0.1</AssemblyVersion>
 		<FileVersion>1.0.0.1</FileVersion>
-		<Version>2.0.8</Version>
+		<Version>2.0.9</Version>
 		<PackageProjectUrl>https://github.com/onadebi/OnaxTools.Utils</PackageProjectUrl>
 		<PackageReadmeFile>ReadMe.Md</PackageReadmeFile>
 		<RepositoryUrl>https://github.com/onadebi/OnaxTools.Utils</RepositoryUrl>
