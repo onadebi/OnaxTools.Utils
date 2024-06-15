@@ -26,13 +26,13 @@ namespace OnaxTools.Http
         /// <returns></returns>
         public async virtual Task<T> PostAsync<T, U>(string url, U payload, IDictionary<string, string> headers)
         {
-            T objResp = default(T);
+            T objResp = default;
             RestResponse response = new();
             try
             {
                 var options = new RestClientOptions()
                 {
-                    MaxTimeout = -1,
+                    Timeout = TimeSpan.FromSeconds(int.MaxValue),
                     RemoteCertificateValidationCallback = (sender, certificate, chain, sslPolicyErrors) => true,
                 };
                 var client = new RestClient(options);
@@ -66,7 +66,7 @@ namespace OnaxTools.Http
             {
                 var options = new RestClientOptions()
                 {
-                    MaxTimeout = -1,
+                    Timeout = TimeSpan.FromSeconds(int.MaxValue),
                     RemoteCertificateValidationCallback = (sender, certificate, chain, sslPolicyErrors) => true,
                 };
                 var client = new RestClient(options);

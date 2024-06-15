@@ -12,19 +12,19 @@
 		<Description>A collection of utilities for easy and customizable encryption/decryption, text logging, data type checks etc</Description>
 		<AssemblyVersion>1.0.0.1</AssemblyVersion>
 		<FileVersion>1.0.0.1</FileVersion>
-		<Version>2.0.9</Version>
+		<Version>2.0.10</Version>
 		<PackageProjectUrl>https://github.com/onadebi/OnaxTools.Utils</PackageProjectUrl>
 		<PackageReadmeFile>ReadMe.Md</PackageReadmeFile>
 		<RepositoryUrl>https://github.com/onadebi/OnaxTools.Utils</RepositoryUrl>
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="7.0.0" />
-		<PackageReference Include="Microsoft.Extensions.Primitives" Version="7.0.0" />
-		<PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.26.0" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="8.0.0" />
+		<PackageReference Include="Microsoft.Extensions.Primitives" Version="8.0.0" />
+		<PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="7.6.0" />
 		<PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
-		<PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
-		<PackageReference Include="RestSharp" Version="109.0.1" />
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+		<PackageReference Include="RestSharp" Version="111.2.0" />
 		<!--<PackageReference Include="RabbitMQ.Client" Version="6.2.0" />-->
 	</ItemGroup>
 
