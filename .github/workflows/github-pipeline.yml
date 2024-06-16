@@ -6,6 +6,7 @@ on:
       - 'v2.1.10'
     branches:
       - 'main'
+      - 'develop'
 
 jobs:
   publish:
@@ -27,4 +28,5 @@ jobs:
       - name: Push to NuGet
         env:
           NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
-        run: dotnet nuget push ./nupkg/*.nupkg --api-key $NUGET_API_KEY --source https://api.nuget.org/v3/index.json
+        run: echo $NUGET_API_KEY
+        # run: dotnet nuget push ./nupkg/*.nupkg --api-key $NUGET_API_KEY --source https://api.nuget.org/v3/index.json
