@@ -35,4 +35,8 @@
 	  </None>
 	</ItemGroup>
 
+	<ItemGroup>
+	  <None Include=".github\workflows\github-pipeline.yml" />
+	</ItemGroup>
+
 </Project>
