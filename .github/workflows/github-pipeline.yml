@@ -4,6 +4,8 @@ on:
   push:
     tags:
       - 'v2.1.10'
+    branches:
+      - 'main'
 
 jobs:
   publish:
