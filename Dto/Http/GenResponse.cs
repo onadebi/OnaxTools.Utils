@@ -10,6 +10,17 @@ namespace OnaxTools.Dto.Http
         public virtual string Error { get; set; } = null;
         public virtual int StatCode { get; set; } = (int)StatusCodeEnum.OK;
 
+
+        public GenResponse(){}
+        public GenResponse(T data, bool isSuccess, int statCode, string message = "", string error = null)
+        {
+            Result = data;
+            IsSuccess = isSuccess;
+            StatCode = statCode;
+            Message = message;
+            Error = error;
+        }
+
         public static GenResponse<T> Success(T result, StatusCodeEnum statusCode = StatusCodeEnum.OK, string message = null) => new GenResponse<T> { IsSuccess = true, Result = result, Message = message, StatCode = (int)statusCode };
         public static GenResponse<T> Failed(string error, StatusCodeEnum statusCode = StatusCodeEnum.BadRequest) => new GenResponse<T> { IsSuccess = false, Error = error, StatCode = (int)statusCode };
     }
