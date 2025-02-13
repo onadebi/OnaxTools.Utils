@@ -41,7 +41,7 @@ namespace OnaxTools.Common
                         {
                             Email = tokenValues["Email"],
                             DisplayName = tokenValues["unique_name"],
-                            Id = Convert.ToInt32(tokenValues["UserId"])
+                            Id = tokenValues["UserId"]
                         };
                         string userRoles = tokenValues["Role"];
                         appUser.Roles = !string.IsNullOrWhiteSpace(userRoles) ? userRoles.Split(',').ToList() : new();
