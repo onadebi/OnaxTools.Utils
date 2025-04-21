@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Primitives;
+using Microsoft.IdentityModel.JsonWebTokens;
 using OnaxTools.Dto.Http;
 using OnaxTools.Dto.Identity;
-using System.IdentityModel.Tokens.Jwt;
 
 namespace OnaxTools.Common
 {
@@ -22,7 +22,7 @@ namespace OnaxTools.Common
                 if (authHeader != null)
                 {
                     string authToken = !string.IsNullOrWhiteSpace(authHeader) ? authHeader.Split(" ")[1] : string.Empty;
-                    var jwtoken = new JwtSecurityTokenHandler().ReadJwtToken(authToken);
+                    var jwtoken = new JsonWebTokenHandler().ReadJsonWebToken(authToken);
                     Dictionary<string, string> tokenValues = new();
                     foreach (var claim in jwtoken.Claims)
                     {
