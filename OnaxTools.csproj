@@ -12,14 +12,16 @@
 		<Description>A convenient collection of utilities for easy and customizable encryption/decryption, DB Access, Text logging, data type checks etc</Description>
 		<AssemblyVersion>1.0.0.1</AssemblyVersion>
 		<FileVersion>1.0.0.1</FileVersion>
-		<Version>2.1.14</Version>
+		<Version>2.1.15</Version>
 		<PackageProjectUrl>https://github.com/onadebi/OnaxTools.Utils</PackageProjectUrl>
 		<PackageReadmeFile>ReadMe.Md</PackageReadmeFile>
 		<RepositoryUrl>https://github.com/onadebi/OnaxTools.Utils</RepositoryUrl>
 	</PropertyGroup>
 
 	<ItemGroup>
+		<PackageReference Include="EFCore.BulkExtensions" Version="6.8.1" />
 		<PackageReference Include="Microsoft.Azure.Cosmos" Version="3.44.0" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.36" />
 		<PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="8.0.1" />
 		<PackageReference Include="Microsoft.Extensions.Primitives" Version="8.0.0" />
 		<PackageReference Include="MongoDB.Driver" Version="2.29.0" />
@@ -27,7 +29,6 @@
 		<PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.1.2" />
 		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
 		<PackageReference Include="RestSharp" Version="112.1.0" />
-		<!--<PackageReference Include="RabbitMQ.Client" Version="6.2.0" />-->
 	</ItemGroup>
 
 	<ItemGroup>
