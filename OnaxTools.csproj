@@ -12,7 +12,7 @@
 		<Description>A convenient collection of utilities for easy and customizable encryption/decryption, DB Access, Text logging, data type checks etc</Description>
 		<AssemblyVersion>1.0.0.1</AssemblyVersion>
 		<FileVersion>1.0.0.1</FileVersion>
-		<Version>2.2.2</Version>
+		<Version>2.2.3</Version>
 		<PackageProjectUrl>https://github.com/onadebi/OnaxTools.Utils</PackageProjectUrl>
 		<PackageReadmeFile>ReadMe.Md</PackageReadmeFile>
 		<RepositoryUrl>https://github.com/onadebi/OnaxTools.Utils</RepositoryUrl>
@@ -26,7 +26,6 @@
 		<PackageReference Include="Microsoft.Extensions.Primitives" Version="9.0.4" />
 		<PackageReference Include="MongoDB.Driver" Version="3.3.0" />
 		<PackageReference Include="StackExchange.Redis" Version="2.8.31" />
-		<!--<PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.8.0" />-->
 		<PackageReference Include="Microsoft.IdentityModel.JsonWebTokens" Version="8.6.1" />
 		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
 		<PackageReference Include="RestSharp" Version="112.1.0" />

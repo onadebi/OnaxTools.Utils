@@ -1,4 +1,4 @@
-﻿//using EFCore.BulkExtensions;
+﻿using EFCore.BulkExtensions;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;
 using Microsoft.EntityFrameworkCore.Infrastructure;
@@ -35,20 +35,17 @@ public class Repository<TEntity> : IRepository<TEntity> where TEntity : class
 
     public async Task BulkDeleteAsync(IEnumerable<TEntity> entities)
     {
-        throw new NotImplementedException();
-        //await context.BulkDeleteAsync(entities);
+        await context.BulkDeleteAsync(entities);
     }
 
     public async Task BulkInsertAsync(IEnumerable<TEntity> entities)
     {
-        throw new NotImplementedException();
-        //await context.BulkInsertAsync(entities.ToList());
+       await context.BulkInsertAsync(entities.ToList());
     }
 
     public async Task BulkUpdateAsync(IEnumerable<TEntity> entities)
     {
-        throw new NotImplementedException();
-        //await context.BulkUpdateAsync(entities.ToList());
+        await context.BulkUpdateAsync(entities.ToList());
     }
 
     public async Task<int> CountAsync(Expression<Func<TEntity, bool>> predicate)
@@ -136,18 +133,17 @@ public class Repository<TEntity> : IRepository<TEntity> where TEntity : class
 
     public long GetNextSequenceValue(string name, string schema = null)
     {
-        //string sql = context.GetService<IUpdateSqlGenerator>().GenerateNextSequenceValueOperation(name, schema ?? context.Model.GetDefaultSchema());
-        //IRelationalCommand relationalCommand = context.GetService<IRawSqlCommandBuilder>().Build(sql);
+        string sql = context.GetService<IUpdateSqlGenerator>().GenerateNextSequenceValueOperation(name, schema ?? context.Model.GetDefaultSchema());
+        IRelationalCommand relationalCommand = context.GetService<IRawSqlCommandBuilder>().Build(sql);
 
-        //RelationalCommandParameterObject parameterObject = new(
-        //    context.GetService<IRelationalConnection>(),
-        //    logger: context.GetService<IRelationalCommandDiagnosticsLogger>(),
-        //    parameterValues: null,
-        //    readerColumns: null,
-        //    context: context
-        //);
-        //return Convert.ToInt64(relationalCommand.ExecuteScalar(parameterObject), CultureInfo.InvariantCulture);
-        return 0L;
+        RelationalCommandParameterObject parameterObject = new(
+            context.GetService<IRelationalConnection>(),
+            logger: context.GetService<IRelationalCommandDiagnosticsLogger>(),
+            parameterValues: null,
+            readerColumns: null,
+            context: context
+        );
+        return Convert.ToInt64(relationalCommand.ExecuteScalar(parameterObject), CultureInfo.InvariantCulture);
     }
 
     public void Remove(TEntity entity)
