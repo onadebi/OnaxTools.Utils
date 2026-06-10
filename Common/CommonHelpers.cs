@@ -45,6 +45,7 @@ namespace OnaxTools.Common
                         };
                         string userRoles = tokenValues["Role"];
                         appUser.Roles = !string.IsNullOrWhiteSpace(userRoles) ? userRoles.Split(',').ToList() : new();
+                        appUser.Organization = tokenValues.ContainsKey("Organization") ? [.. tokenValues["Organization"].Split(',')] : [];
                         objResp = GenResponse<AppUserIdentity>.Success(appUser);
                     }
                     else

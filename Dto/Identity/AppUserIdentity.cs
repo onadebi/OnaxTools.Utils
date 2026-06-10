@@ -8,6 +8,7 @@
         public virtual string GuestId { get; set; }
         public virtual string Guid { get; set; }
         public virtual List<string> Roles { get; set; }
+        public virtual List<object> Organization { get; set; }
         public virtual DateTime ExpiresAt { get; set; }
         public virtual DateTime CreatedAt { get; set; }
     }
